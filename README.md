@@ -1,20 +1,22 @@
 # LOCATE Sample UI
 
-This is a sample ReactJS app designed to get you started developing custom user interfaces for [LOCATE Inventory](https://locateinv.com). This app can be used as a template for your UI project. For more LOCATE developer resources please visit our [developer docs page](https://developer.locateinv.com).
+This is a sample React application designed to get you started developing custom web apps for [LOCATE Inventory](https://locateinv.com). This app can be used as a template for your UI project. For more LOCATE developer resources please visit our [developer docs page](https://developer.locateinv.com).
+
+## Libraries
+
+Below is a list of libraries used in this project. It's important to familiarize yourself with these libraries before getting started.
+
+- [React](https://reactjs.org/) - JavaScript UI Library
+- [React Bootstrap](https://react-bootstrap.github.io/) - UI Component library for React based on [Bootstrap](https://getbootstrap.com/)
+- [Reach Router](https://reach.tech/router/) - UI Router for React
+- [Universal Cookie](https://github.com/reactivestack/cookies/tree/master/packages/universal-cookie) - Cookie management library for React
 
 ## Getting Started
-### Install NodeJS
-Download and install the lastest stable version of Node.js from [NodeJS.org](https://nodejs.org)
 
-### Clone the Repo
-Clone or download a copy of this repository
-
-### `yarn install`
-From the repository directory run `yarn install` to install the necessary dependencies
-
-### `yarn start`
-From the repositry directory run `yarn start` to start the development server
-
+1. **Install NodeJS** - Download and install the lastest stable version of Node.js from [NodeJS.org](https://nodejs.org)
+2. **Clone the Repo** - Clone or download a copy of this repository
+3. **Install Dependencies** - From the repository directory run `yarn install` to install the necessary dependencies
+4. **Start the Dev Server** - From the repositry directory run `yarn start` to start the development server
 
 ## Available Scripts
 
