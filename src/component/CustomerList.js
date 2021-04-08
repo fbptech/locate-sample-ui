@@ -1,25 +1,31 @@
 import axios from "axios";
 import React from "react";
-import { Row, Col, Table, Pagination } from "react-bootstrap";
+import { Row, Col, Table, Pagination, Spinner } from "react-bootstrap";
 
 // Customer List Component
 const CustomerList = () => {
   const [customers, setCustomers] = React.useState([]);
   const [page, setPage] = React.useState(1);
+  const [loading, setLoading] = React.useState(false);
 
   // Load customer data on component mount and page state change
   React.useEffect(() => {
+    setLoading(true);
     const axiosSource = axios.CancelToken.source();
     axios
       .get("/customer", { params: { perPage: 15, page: page, embed: "customertype,status,default_email.email,default_phone.phone" }, cancelToken: axiosSource.token })
       .then(({ data }) => setCustomers(data.data))
-      .catch((err) => {});
+      .then(() => setLoading(false))
+      .catch((err) => {
+        !axios.isCancel(err) && setLoading(false);
+      });
     return axiosSource.cancel; // Cancel request on component unmount
   }, [page]);
 
   return (
     <React.Fragment>
       <Row className="justify-content-end">
+        <Col xs="auto">{loading && <Spinner animation="border" />}</Col>
         <Col xs="auto">
           <Pagination>
             <Pagination.Prev disabled={page === 1} onClick={() => setPage(page - 1)} />

@@ -1,7 +1,6 @@
 import { Link } from "@reach/router";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { useAuth } from "../provider/AuthProvider";
-import APP_NAME from "../constant/APP_NAME";
 
 // Primary Navigation Menu for App
 const AppNav = () => {
@@ -10,7 +9,7 @@ const AppNav = () => {
   return (
     <Navbar bg="light" expand="lg" collapseOnSelect tabIndex={-1}>
       <Navbar.Brand as={Link} to="/">
-        {APP_NAME}
+        {process.env.REACT_APP_NAME}
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
 

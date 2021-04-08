@@ -5,12 +5,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import { AuthProvider } from "./provider/AuthProvider";
 import App from "./App";
-import APP_NAME from "./constant/APP_NAME";
 import reportWebVitals from "./reportWebVitals";
 
 axios.defaults.headers.common["Content-Type"] = "application/json";
 axios.defaults.headers.common["Accept"] = "application/json";
-axios.defaults.headers.common["X-User-Agent"] = APP_NAME.toLowerCase().replaceAll(" ", "-"); // Header used in audit log
+axios.defaults.headers.common["X-User-Agent"] = `${process.env.REACT_APP_NAME.toLowerCase().replaceAll(" ", "-")}-${process.env.REACT_APP_VERSION}`; // Header used in audit log
 
 ReactDOM.render(
   <React.StrictMode>

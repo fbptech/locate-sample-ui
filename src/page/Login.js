@@ -1,7 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Card, Alert, Form, Button, InputGroup } from "react-bootstrap";
 import { useAuth } from "../provider/AuthProvider";
-import APP_NAME from "../constant/APP_NAME";
 
 // Login Page
 const Login = () => {
@@ -37,7 +36,7 @@ const Login = () => {
       <Row className="justify-content-center w-100">
         <Col xs={12} lg={6}>
           <Card>
-            <Card.Header>{APP_NAME}</Card.Header>
+            <Card.Header>{process.env.REACT_APP_NAME}</Card.Header>
             <Card.Body>
               {error && <Alert variant="danger">{error}</Alert>}
               <Form onSubmit={submitLogin}>
