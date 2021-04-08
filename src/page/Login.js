@@ -33,7 +33,7 @@ const Login = () => {
 
   return (
     <Container className="d-flex align-items-center min-vh-100">
-      <Row className="justify-content-center w-100">
+      <Row className="justify-content-center" style={{ minWidth: "100%" }}>
         <Col xs={12} lg={6}>
           <Card>
             <Card.Header>{process.env.REACT_APP_NAME}</Card.Header>
